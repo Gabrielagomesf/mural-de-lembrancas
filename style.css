@@ -1,11 +1,4 @@
-/* Reset de margin e padding para consistência */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo base */
+/* Estilo geral do corpo da página */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -17,6 +10,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
+/* Estilo do cabeçalho */
 header {
     background-color: #3c8d99;
     color: #fff;
@@ -28,12 +22,14 @@ header {
     z-index: 1000;
 }
 
+/* Tamanho do título do cabeçalho */
 header h1 {
     margin: 0;
     font-size: 2.5rem;
     font-weight: 600;
 }
 
+/* Estilo do menu de navegação */
 nav ul {
     list-style: none;
     padding: 0;
@@ -43,6 +39,7 @@ nav ul {
     margin: 1rem 0;
 }
 
+/* Estilo dos links de navegação */
 nav a {
     color: #fff;
     text-decoration: none;
@@ -54,11 +51,50 @@ nav a {
     transition: background 0.3s, transform 0.2s;
 }
 
+/* Efeito hover nos links do menu */
 nav a:hover {
     background: #6ca0a3;
     transform: scale(1.1);
 }
 
+/* Estilos do menu hamburguer para dispositivos móveis */
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #3c8d99;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-radius: 10px;
+    }
+
+    #menu-toggle:checked + nav ul {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Estilo das seções */
 section {
     padding: 4rem 2rem;
     margin: 3rem auto;
@@ -70,6 +106,7 @@ section {
     animation: fadeInSection 1s ease-out;
 }
 
+/* Estilo dos títulos das seções */
 section h2 {
     text-align: center;
     color: #4f9ea0;
@@ -78,6 +115,7 @@ section h2 {
     font-weight: 700;
 }
 
+/* Estilo da galeria de imagens */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -118,6 +156,7 @@ section h2 {
     color: #4f9ea0;
 }
 
+/* Estilo do player de música */
 .player audio {
     width: 100%;
     margin-bottom: 1rem;
@@ -125,126 +164,61 @@ section h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo da notificação de surpresa */
 .notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #f3e9f1;
-    color: #333;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 320px;
-    z-index: 1000;
     display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4f9ea0;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
     flex-direction: column;
     align-items: center;
-    animation: showNotification 0.5s ease-out;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 .notification img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
 }
 
-.notification .close-button {
-    margin-top: 10px;
-    padding: 12px 24px;
+.close-button {
+    background-color: #ff4e4e;
     border: none;
-    background-color: #4f9ea0;
-    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
     border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
 }
 
-.notification .close-button:hover {
-    background-color: #3c8d99;
-    transform: scale(1.1);
+.close-button:hover {
+    background-color: #ff2e2e;
 }
 
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #3c8d99;
-    color: white;
-    font-size: 1rem;
-    margin-top: 2rem;
-}
-
-/* Media Queries for Responsiveness */
-
-@media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    section h2 {
-        font-size: 2rem;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: 200px;
-    }
-
-    .image-description {
-        font-size: 1rem;
-    }
-
-    .player audio {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        gap: 0.8rem;
-    }
-
-    section h2 {
-        font-size: 1.8rem;
-    }
-
-    .gallery img {
-        height: 150px;
-    }
-
-    .image-description {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.9rem;
-    }
-}
-
-@keyframes showNotification {
+/* Animação da notificação */
+@keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(-50%) translateY(-50px);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(-50%) translateY(0);
     }
 }
 
+/* Animação das seções ao entrar na tela */
 @keyframes fadeInSection {
     0% {
         opacity: 0;
@@ -256,11 +230,47 @@ footer {
     }
 }
 
+/* Animação do corpo ao carregar */
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #3c8d99;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ajuste para quando a tela é muito pequena */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .gallery img {
+        height: 200px;
+    }
+
+    .player audio {
+        font-size: 0.9rem;
     }
 }
