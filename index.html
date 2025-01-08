@@ -5,40 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mural de Lembranças</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Mural de Lembranças</h1>
         <nav>
-            <ul>
-                <li><a href="#fotos">Fotos</a></li>
-                <li><a href="#texto">Carta</a></li>
-                <li><a href="#musicas">Músicas</a></li>
-                <li><a href="#outras">Surpresas</a></li>
+            <div class="logo">
+                <h1>Mural de Lembranças</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#fotos"><i class="fas fa-camera-retro"></i> Fotos</a></li>
+                <li><a href="#texto"><i class="fas fa-envelope"></i> Carta</a></li>
+                <li><a href="#musicas"><i class="fas fa-headphones"></i> Músicas</a></li>
+                <li><a href="#outras"><i class="fas fa-gift"></i> Surpresas</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="fotos">
-            <h2>Nossas Fotos</h2>
+            <h2><i class="fas fa-camera"></i> Nossas Fotos</h2>
             <div class="gallery">
-                <img src="images/amor.jpg" alt="Foto Amor">
-                <img src="images/amor.jpg" alt="Foto Amor">
-                <img src="images/amor.jpg" alt="Foto Amor">
+                <div class="gallery-item">
+                    <img src="images/amor.jpg" alt="Foto Amor">
+                    <p class="image-description">Um momento de pura felicidade juntos!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/amor.jpg" alt="Foto Amor">
+                    <p class="image-description">Lembranças que aquecem o coração.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/amor.jpg" alt="Foto Amor">
+                    <p class="image-description">A felicidade está nos detalhes.</p>
+                </div>
             </div>
         </section>
 
         <section id="texto">
-            <h2>Carta para Você</h2>
+            <h2><i class="fas fa-pencil-alt"></i> Carta para Você</h2>
             <p>
                 Meu amor, cada momento ao seu lado é especial. Hoje quero celebrar você, a pessoa incrível que me faz sorrir todos os dias. Feliz aniversário! ❤️
             </p>
         </section>
 
         <section id="musicas">
-            <h2>Músicas</h2>
+            <h2><i class="fas fa-music"></i> Músicas</h2>
             <div class="player">
                 <audio controls>
                     <source src="music/musicA.m4a" type="audio/mp4">
@@ -56,9 +68,9 @@
         </section>
 
         <section id="outras">
-            <h2>Surpresas</h2>
+            <h2><i class="fas fa-gift"></i> Surpresas</h2>
             <p>
-                Clique <a href="#" id="surpresa-link">aqui</a> para uma surpresa especial! 🌟
+                Clique <a href="#" id="surpresa-link"><i class="fas fa-star"></i> aqui</a> para uma surpresa especial! 🌟
             </p>
         </section>
     </main>
