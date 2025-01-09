@@ -1,4 +1,4 @@
-/* Reset de Estilos */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,368 +7,202 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #E7F4FF; /* Azul Claro */
-    color: #1E3A56; /* Texto Azul Escuro */
+    color: #333;
+    background-color: #f4f4f4;
     line-height: 1.6;
 }
 
-/* Cabeçalho */
+/* Header */
 header {
-    background-color: #FFFFFF;
-    padding: 20px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #4C92C3; /* Azul Médio */
-}
-
-header .logo h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #4C92C3; /* Azul Médio */
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 25px;
+    list-style: none;
 }
 
-.nav-links li a {
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
     text-decoration: none;
-    color: #1E3A56;
+    color: white;
     font-size: 1.1rem;
-    padding: 12px 20px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    background-color: #6EC5F1; /* Azul Claro */
-    color: white;
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 .nav-toggle {
     display: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    background: none;
     cursor: pointer;
 }
 
+/* Responsiveness */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
-        gap: 15px;
+        background-color: #333;
         position: absolute;
-        top: 80px;
-        right: 20px;
-        background-color: #FFFFFF;
-        padding: 15px 25px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-toggle {
-        display: block;
+    .nav-links li {
+        margin: 1rem 0;
     }
 }
 
-/* Seção Principal */
-main {
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Sections */
+.section-gallery, #texto, .section-music, #outras {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
 }
 
-/* Seções */
-section {
-    margin-bottom: 60px;
-    padding: 30px;
-    background-color: #FFFFFF;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-h2 {
-    font-size: 2.4rem;
-    color: #4C92C3; /* Azul Médio */
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-/* Galeria de Fotos */
 .gallery {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .gallery-item {
-    position: relative;
+    flex: 1;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
+    border-radius: 8px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+    display: block;
 }
 
-.image-description {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
+/* Audio Player */
+.audio-controls button {
+    background-color: #ff6f61;
     color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-/* Player de Música */
-.player {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-audio {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    background: #eaeaea;
+    padding: 0.5rem 1rem;
     border: none;
-    padding: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-audio:hover {
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+.audio-controls button:hover {
+    background-color: #ff4e3b;
 }
 
-audio::-webkit-media-controls-panel {
-    background: #eaeaea;
-}
-
-audio::-webkit-media-controls-play-button {
-    background-color: #6EC5F1; /* Azul Claro */
-}
-
-audio::-webkit-media-controls-volume-slider {
-    background: #eaeaea;
-}
-
-/* Notificação de Surpresa */
-.notification {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-    z-index: 2000;
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #ff6f61;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -150px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    z-index: 1000;
+    animation: slide-in 0.5s ease-out forwards, bounce 1s infinite ease-in-out 0.5s;
 }
 
 .notification img {
-    width: 120px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 150px;
 }
 
-.close-button {
-    padding: 12px 25px;
-    background-color: #6EC5F1; /* Azul Claro */
+.notification .close-button {
+    margin-top: 10px;
+    background-color: #ff6f61;
     color: white;
     border: none;
-    border-radius: 30px;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1rem;
     transition: background-color 0.3s ease;
 }
 
-.close-button:hover {
-    background-color: #4C92C3; /* Azul Médio */
+.notification .close-button:hover {
+    background-color: #ff4e3b;
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 30px;
-    background-color: #4C92C3; /* Azul Escuro */
-    color: #FFFFFF; /* Texto Branco */
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-top: 2px solid #1E3A56; /* Azul Médio */
-    margin-top: 40px;
-}
-
-/* Estilo de botões e inputs */
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 2px solid #4C92C3; /* Azul Médio */
-    border-radius: 12px;
-    font-size: 1.1rem;
-    background-color: #ffffff;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus {
-    border-color: #6EC5F1; /* Azul Claro */
-    outline: none;
-}
-
-button {
-    padding: 12px 30px;
-    background-color: #4C92C3; /* Azul Médio */
+.whatsapp-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #25D366;
     color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #6EC5F1; /* Azul Claro */
-}
-
-/* Estilização de Links */
-a {
     text-decoration: none;
-    color: #4C92C3; /* Azul Médio */
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    color: #6EC5F1; /* Azul Claro */
+.whatsapp-button:hover {
+    background-color: #1DA851;
 }
 
-/* Responsividade para Modo Mobile */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        gap: 30px;
-    }
 
-    .profile-panel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+/* Animations */
+@keyframes slide-in {
+    0% {
+        bottom: -150px;
+        opacity: 0;
     }
-
-    .side-panel {
-        display: none;
-    }
-
-    .input-container input {
-        font-size: 1rem;
-    }
-
-    header {
-        padding: 15px 20px;
-    }
-
-    header .logo h1 {
-        font-size: 1.8rem;
-    }
-
-    .nav-links {
-        position: relative;
-        top: 0;
-    }
-
-    .player {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    100% {
+        bottom: 20px;
+        opacity: 1;
     }
 }
 
-/* Responsividade para Modo Mobile Menor (smartphones) */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 15px;
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-
-    .nav-links {
-        gap: 10px;
-        padding: 10px 20px;
-    }
-
-    header .logo h1 {
-        font-size: 1.5rem;
-    }
-
-    .input-container input {
-        font-size: 0.9rem;
-        padding: 12px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    footer {
-        font-size: 1rem;
-    }
-
-    .gallery-item {
-        border-radius: 10px;
-    }
-
-    .notification {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .close-button {
-        font-size: 1rem;
+    50% {
+        transform: translateY(-10px);
     }
 }

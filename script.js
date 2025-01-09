@@ -1,44 +1,53 @@
+// Menu Toggle
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-if (navToggle) {
-    navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
+navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
 // Surpresa funcionalidade
 const surpresaLink = document.getElementById("surpresa-link");
 
-if (surpresaLink) {
-    surpresaLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        
-        const notification = document.createElement("div");
-        notification.classList.add("notification");
+surpresaLink.addEventListener("click", (event) => {
+    event.preventDefault();
 
-        const message = document.createElement("p");
-        message.innerHTML = "Surpresa! Você ganhou um rolê especial em um barzinho com tudo pago! 🥳🍻";
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
 
-        const qrCode = document.createElement("img");
-        qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=https://wa.me/5519995555280&size=150x150";
-        qrCode.alt = "QR Code para o WhatsApp";
+    const phoneNumber = "+5519995555280"; // Seu número de WhatsApp
+    const message = "Quero resgatar meu prêmio kkk. ❤️";
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const qrCodeLink = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(whatsappLink)}&size=150x150`;
 
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "Fechar";
-        closeButton.classList.add("close-button");
+    notification.innerHTML = `
+        <p>🎉 Surpresa! Você ganhou um rolê com tudo pago kk 🍻!</p>
+        <p>Clique no botão abaixo ou escaneie o QR Code.</p>
+        <img src="${qrCodeLink}" alt="QR Code para WhatsApp">
+        <a href="${whatsappLink}" target="_blank" class="whatsapp-button">Enviar Mensagem no WhatsApp</a>
+        <button class="close-button">Fechar</button>
+    `;
 
-        closeButton.addEventListener("click", () => {
-            notification.style.display = "none";
-        });
+    document.body.appendChild(notification);
 
-        notification.appendChild(message);
-        notification.appendChild(qrCode);
-        notification.appendChild(closeButton);
-        document.body.appendChild(notification);
-
-        setTimeout(() => {
-            notification.style.display = "flex";
-        }, 50);
+    const closeButton = notification.querySelector(".close-button");
+    closeButton.addEventListener("click", () => {
+        notification.remove();
     });
+});
+
+// Funções do Player de Áudio
+const audioPlayer = document.getElementById("audio-player");
+
+function playPauseAudio() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+    }
+}
+
+function stopAudio() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
 }

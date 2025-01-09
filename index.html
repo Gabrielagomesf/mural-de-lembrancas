@@ -50,21 +50,18 @@
             </p>
         </section>
 
-        <section id="musicas">
+        <section id="musicas" class="section-music">
             <h2><i class="fas fa-music"></i> Músicas</h2>
             <div class="player">
-                <audio controls>
-                    <source src="music/musicA.m4a" type="audio/mp4">
-                    Sua música 1 não pode ser reproduzida.
+                <h3>Ouça a música</h3>
+                <audio id="audio-player" controls>
+                    <source src="music/musicA.m4a" type="audio/mp3">
+                    Seu navegador não suporta o formato de áudio.
                 </audio>
-                <audio controls>
-                    <source src="music/musicA.m4a" type="audio/mp4">
-                    Sua música 2 não pode ser reproduzida.
-                </audio>
-                <audio controls>
-                    <source src="music/musicA.m4a" type="audio/mp4">
-                    Sua música 3 não pode ser reproduzida.
-                </audio>
+                <div class="audio-controls">
+                    <button onclick="playPauseAudio()">Play</button>
+                    <button onclick="stopAudio()">Stop</button>
+                </div>
             </div>
         </section>
 
