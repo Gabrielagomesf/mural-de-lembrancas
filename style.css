@@ -8,13 +8,13 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f7e1e1; /* Fundo suave e romântico */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: #c72c41; /* Tom de vermelho apaixonado */
     color: white;
     padding: 1rem 2rem;
 }
@@ -42,6 +42,7 @@ header nav {
 
 .nav-links a:hover {
     text-decoration: underline;
+    color: #ff9a8b; /* Vermelho suave ao passar o mouse */
 }
 
 .nav-toggle {
@@ -62,7 +63,7 @@ header nav {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #333;
+        background-color: #c72c41; /* Cor vermelha */
         position: absolute;
         top: 60px;
         left: 0;
@@ -91,6 +92,7 @@ header nav {
     text-align: center;
 }
 
+/* Fotos */
 .gallery {
     display: flex;
     justify-content: space-between;
@@ -108,9 +110,9 @@ header nav {
     display: block;
 }
 
-/* Audio Player */
+/* Music Player */
 .audio-controls button {
-    background-color: #ff6f61;
+    background-color: #ff6f61; /* Botões com tom vibrante de vermelho */
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -120,18 +122,18 @@ header nav {
 }
 
 .audio-controls button:hover {
-    background-color: #ff4e3b;
+    background-color: #ff4e3b; /* Vermelho mais forte ao passar o mouse */
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #c72c41; /* Vermelho intenso para o rodapé */
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
     font-size: 0.9rem;
-    border-top: 2px solid #ff6f61;
+    border-top: 2px solid #ff6f61; /* Linha dourada no topo */
 }
 
 /* Notification */
@@ -156,7 +158,7 @@ footer {
 
 .notification .close-button {
     margin-top: 10px;
-    background-color: #ff6f61;
+    background-color: #ff6f61; /* Botão de fechamento vermelho */
     color: white;
     border: none;
     padding: 8px 12px;
@@ -173,7 +175,7 @@ footer {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #25D366;
+    background-color: #ff6f61; /* Botão de WhatsApp com tom de vermelho */
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -182,9 +184,8 @@ footer {
 }
 
 .whatsapp-button:hover {
-    background-color: #1DA851;
+    background-color: #ff4e3b;
 }
-
 
 /* Animations */
 @keyframes slide-in {
