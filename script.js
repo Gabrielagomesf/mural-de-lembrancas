@@ -6,6 +6,8 @@ navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
+
+
 // Surpresa funcionalidade
 const surpresaLink = document.getElementById("surpresa-link");
 

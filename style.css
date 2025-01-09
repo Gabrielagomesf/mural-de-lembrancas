@@ -16,7 +16,11 @@ body {
 header {
     background-color: #c72c41; /* Tom de vermelho apaixonado */
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header nav {
@@ -31,20 +35,24 @@ header nav {
 }
 
 .nav-links li {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Ajuste para melhor legibilidade */
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
     color: #ff9a8b; /* Vermelho suave ao passar o mouse */
+    transform: translateY(-2px); /* Leve efeito de elevação */
 }
 
+/* Menu Toggle */
 .nav-toggle {
     display: none;
     font-size: 1.5rem;
@@ -63,7 +71,7 @@ header nav {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #c72c41; /* Cor vermelha */
+        background-color: #c72c41;
         position: absolute;
         top: 60px;
         left: 0;
@@ -80,41 +88,93 @@ header nav {
     }
 }
 
-/* Sections */
+/* Títulos das Seções - Ajuste de tamanhos */
+h2 {
+    font-size: 2.2rem; /* Tamanho mais equilibrado */
+    color: #c72c41; /* Cor de destaque */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Linha simples e suave abaixo do título */
+h2:after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff9a8b;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+/* Alteração suave no título ao passar o mouse */
+h2:hover {
+    color: #ff6f61;
+    transform: translateY(-2px);
+}
+
+/* Efeitos sutis ao passar o mouse */
+h2:hover:after {
+    background-color: #ff6f61;
+}
+
+/* Estilização das seções */
 .section-gallery, #texto, .section-music, #outras {
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 2.5rem;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-gallery:hover, #texto:hover, .section-music:hover, #outras:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
 }
 
 /* Fotos */
 .gallery {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .gallery-item {
     flex: 1;
+    min-width: 250px;
     overflow: hidden;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
+    height: auto;
     display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
 /* Music Player */
 .audio-controls button {
-    background-color: #ff6f61; /* Botões com tom vibrante de vermelho */
+    background-color: #ff6f61;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -122,24 +182,24 @@ header nav {
 }
 
 .audio-controls button:hover {
-    background-color: #ff4e3b; /* Vermelho mais forte ao passar o mouse */
+    background-color: #ff4e3b;
 }
 
 /* Footer */
 footer {
-    background-color: #c72c41; /* Vermelho intenso para o rodapé */
+    background-color: #c72c41;
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    border-top: 2px solid #ff6f61; /* Linha dourada no topo */
+    padding: 1.2rem;
+    margin-top: 3rem;
+    font-size: 1rem;
+    border-top: 2px solid #ff6f61;
 }
 
-/* Notification */
+/* Notifications */
 .notification {
     position: fixed;
-    bottom: -150px;
+    bottom: 20px;
     right: 20px;
     background-color: white;
     padding: 20px;
@@ -158,7 +218,7 @@ footer {
 
 .notification .close-button {
     margin-top: 10px;
-    background-color: #ff6f61; /* Botão de fechamento vermelho */
+    background-color: #ff6f61;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -171,11 +231,12 @@ footer {
     background-color: #ff4e3b;
 }
 
+/* WhatsApp Button */
 .whatsapp-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #ff6f61; /* Botão de WhatsApp com tom de vermelho */
+    background-color: #ff6f61;
     color: white;
     text-decoration: none;
     font-weight: bold;
